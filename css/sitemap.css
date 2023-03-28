@@ -1,0 +1,172 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+/*begin site map */
+
+.b-0 {
+    bottom: 0;
+}
+.bg-shadow {
+    background: -webkit-gradient(
+        left top,
+        left bottom,
+        color-stop(0%, rgba(179, 171, 171, 0)),
+        color-stop(49%, rgba(48, 48, 48, 0.37)),
+        color-stop(100%, rgba(19, 19, 19, 0.8))
+    );
+    background: -webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        from(rgba(179, 171, 171, 0)),
+        color-stop(49%, rgba(48, 48, 48, 0.71)),
+        to(rgba(19, 19, 19, 0.8))
+    );
+    background: -o-linear-gradient(
+        top,
+        rgba(179, 171, 171, 0) 0%,
+        rgba(48, 48, 48, 0.71) 49%,
+        rgba(19, 19, 19, 0.8) 100%
+    );
+    background: linear-gradient(
+        to bottom,
+        rgba(179, 171, 171, 0) 0%,
+        rgba(48, 48, 48, 0.71) 49%,
+        rgba(19, 19, 19, 0.8) 100%
+    );
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#131313', GradientType=0 );
+}
+.top-indicator {
+    right: 0;
+    top: 1rem;
+    bottom: inherit;
+
+    /* margin-right: 1rem; */
+}
+.overflow {
+    position: relative;
+    overflow: hidden;
+}
+.zoom img {
+    transition: all 0.2s linear;
+}
+.zoom:hover img {
+    transform: scale(1.1);
+}
+/* end begin site map */
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.sitemap {
+    width: 692px;
+    margin: 50px auto;
+}
+.sitemap a {
+    color: #000;
+    text-decoration: none;
+    display: inline-block;
+    text-transform: uppercase;
+    margin: 0 5px;
+    border-radius: 7px;
+    text-align: center;
+    position: relative;
+}
+
+.first > li > a {
+    background: #b4b5b4;
+    width: 150px;
+    height: 70px;
+    line-height: 70px;
+    display: block;
+    margin: auto;
+}
+.first > li > a:after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    width: 1px;
+    height: 10px;
+    background: #9e9f9e;
+    top: 100%;
+}
+.first > li > a:hover {
+    background-color: #ddd;
+}
+.second {
+    padding-top: 20px;
+}
+.second > li {
+    display: inline-block;
+    vertical-align: top;
+}
+.second a {
+    background: #cbcccb;
+    font-size: 14px;
+    width: 125px;
+    height: 50px;
+    line-height: 50px;
+    z-index: 10;
+}
+.second a:before {
+    content: "";
+    position: absolute;
+    border: 1px solid #9e9f9e;
+    border-left: none;
+    border-bottom: none;
+    height: 9px;
+    top: -10px;
+    left: -76px;
+    width: 139px;
+}
+.second li:first-child a:before {
+    border-top: none;
+}
+
+.third {
+    margin-left: 16px;
+    padding-top: 20px;
+}
+.third a {
+    background: #e4e4e3;
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    margin-bottom: 10px;
+    z-index: 5;
+    font-size: 13px;
+}
+.third a:before {
+    border: 1px solid #9e9f9e;
+    border-right: none;
+    border-top: none;
+    height: 55px;
+    top: -35px;
+    left: -8px;
+    width: 7px;
+}
+
+.second a:hover,
+.third a:hover {
+    background-color: #ddd;
+}
+
+h1 {
+    text-align: center;
+    font-weight: normal;
+    line-height: 1.1;
+    text-transform: uppercase;
+    font-size: 3em;
+}
+
+.container {
+    margin-top: 5rem;
+    margin: 80px auto;
+}

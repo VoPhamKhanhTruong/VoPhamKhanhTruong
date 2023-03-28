@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Gallery | Bid Spirit</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
+  <link rel="icon" href="../images/Logo2.png" type="image/gif" sizes="64x64">
+  <link rel="stylesheet" href="../css/style.css">
+  <link href="../dist/simple-lightbox.min.css" rel="stylesheet">
+  <style>
+    img:hover {
+      transition: transform .2s;
+      transform: scale(1.05);
+      box-shadow: 0px 3px 10px 6px rgba(0, 0, 0, 0.75);
+      -webkit-box-shadow: 0px 3px 10px 6px rgba(0, 0, 0, 0.75);
+      -moz-box-shadow: 0px 3px 10px 6px rgba(0, 0, 0, 0.75);
+    }
+  </style>
+</head>
+
+<body ng-app="MyApp">
+  <div ng-controller="MyController" class="main">
+
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light border-bottom fixed-top bg-white">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="../index.html">
+            <img src="../images/Logo.png" alt="" width="48" height="48">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span>
+              <script src="https://cdn.lordicon.com/qjzruarw.js"></script>
+              <lord-icon src="https://cdn.lordicon.com/bwhjesak.json" trigger="morph" style="width:32px;height:32px">
+              </lord-icon>
+            </span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="nav navbar-nav me-auto mb-2 mb-lg-0">
+              <li><a class="nav-link " aria-current="page" href="../index.html">Home</a></li>
+              <li><a class="nav-link" href="../html/products.html">Products</a></li>
+              <li><a class="nav-link" href="../html/about.html">About</a></li>
+              <li><a class="nav-link" href="../html/contact.html">Contact</a></li>
+              <li><a class="nav-link active" href="../html/gallery.html">Gallery</a></li>
+              <li><a class="nav-link" href="../html/sitemap.html">Site Map</a></li>
+            </ul>
+            <ul class="nav-left navbar-nav ms-2 mb-2 mb-lg-0" id="sign">
+              <li><a href="../html/form.html" class="nav-link">Sign In</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <nav aria-label="breadcrumb " style="margin-top: 6rem;">
+      <ol class="breadcrumb mt-4 ms-4">
+          <li class="breadcrumb-item "><a class="text-decoration-none" href="../index.html">Home</a></li>
+          <li class="breadcrumb-item  active" aria-current="page">Gallery</li>
+      </ol>
+  </nav>
+    <!--IMG-->
+  <div class="container-fluid">
+    <div class="gallery">
+      <div class="row mt-1">
+        <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4" ng-repeat="img in listImgs"><a href="../images/{{img}}"><img
+              src="../images/{{img}}" title="" style="width: 100%; height: 100%; object-fit: cover;"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+    <!--END-->
+    <div class="container" style="margin-bottom: 0 !important;">
+        <footer class="text-center text-lg-start bg-light text-muted">
+            <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+                <div class="me-5 d-none d-lg-block">
+                    <span>Get connected with us on social networks:</span>
+                </div>
+
+                <div class="footer-icon">
+                    <a href="https://www.facebook.com/Aptech-Hue-1549657725082378" class="me-4 text-reset">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="https://twitter.com/aptechltd" class="me-4 text-reset">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a href="http://daotao.huecit.vn/%C4%90%C3%A0o-t%E1%BA%A1o/L%E1%BA%ADp-tr%C3%ACnh-vi%C3%AAn-qu%E1%BB%91c-t%E1%BA%BF/pid/5/cid/12?tid=Chuong-trinh-lap-trinh-vien-quoc-te-ASDE.html"
+                        class="me-4 text-reset">
+                        <i class="fa-brands fa-google"></i>
+                    </a>
+                    <a href="https://www.instagram.com/aptechlearning_official/" class="me-4 text-reset">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://in.linkedin.com/company/aptech" class="me-4 text-reset">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/aptech?language=e" class="me-4 text-reset">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                </div>
+            </section>
+
+            <section class="">
+                <div class="footer-hover container text-center text-md-start mt-5">
+                    <div class="row mt-3">
+                        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                            <h6 class="text-uppercase fw-bold mb-4">
+                                <p style="
+                                            color: #3b2314;
+                                            user-select: none;
+                                        ">
+                                    <img src="../images/Logo2.png" alt="" width="84" height="78" />
+                                    Bid Spirit
+                                </p>
+                            </h6>
+                            <p>
+                                Here you can use rows and columns to
+                                organize your footer content. Lorem ipsum
+                                dolor sit amet, consectetur adipisicing
+                                elit.
+                            </p>
+                        </div>
+
+                        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                            <h6 class="text-uppercase fw-bold mb-4">
+                                Products
+                            </h6>
+                            <p>
+                                <a href="../index.html" class="text-reset">Home</a>
+                            </p>
+                            <p>
+                                <a href="../html/products.html" class="text-reset">Products</a>
+                            </p>
+                            <p>
+                                <a href="../html/about.html" class="text-reset">About</a>
+                            </p>
+                            <p>
+                                <a href="../html/contact.html" class="text-reset">Contact</a>
+                            </p>
+                        </div>
+
+                        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                            <h6 class="text-uppercase fw-bold mb-4">
+                                Useful links
+                            </h6>
+                            <p>
+                                <a href="../html/gallery.html" class="text-reset">Gallery</a>
+                            </p>
+                            <p>
+                                <a href="../html/sitemap.html" class="text-reset">Site Map</a>
+                            </p>
+                            <p>
+                                <a href="../html/detail.html?id=1" class="text-reset">Details</a>
+                            </p>
+                        </div>
+
+                        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                            <h6 class="text-uppercase fw-bold mb-4">
+                                Contact
+                            </h6>
+                            <div class="mb-3">
+                                <a href="https://www.google.com/maps/place/Hu%E1%BA%BF+Aptech/@16.4590282,107.5791455,17z/data=!3m1!4b1!4m5!3m4!1s0x3141a149ef807aed:0x4eb6bafb31d4c653!8m2!3d16.4590188!4d107.581338?hl=vi-VN&shorturl=1"
+                                    class="text-reset"><i class="fas fa-home me-3"></i>6 Le
+                                    Loi, Hue, VietNam</a>
+                            </div>
+                            <div class="mb-3">
+                                <a href="mail: info@example.com" class="text-reset">
+                                    <i class="fas fa-envelope me-3"></i>
+                                    info@huecit.vn
+                                </a>
+                            </div>
+                            <div class="mb-3">
+                                <a href="tel: 02343823650" class="text-reset"><i class="fas fa-phone me-3"></i> 0234
+                                    3907 777</a>
+                            </div>
+                            <div class="mb-3">
+                                <a href="http://daotao.huecit.vn/%C4%90%C3%A0o-t%E1%BA%A1o/L%E1%BA%ADp-tr%C3%ACnh-vi%C3%AAn-qu%E1%BB%91c-t%E1%BA%BF/pid/5/cid/12?tid=Chuong-trinh-lap-trinh-vien-quoc-te-ASDE.html"
+                                    class="text-reset"><i class="fa-solid fa-globe me-3"></i>www.huecit.vn</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05)">
+                © 2022 Copyright:
+                <p>Vo Pham Khanh Truong - Nguyen Khanh Dat</p>
+            </div>
+        </footer>
+    </div>
+    <div>
+        <button onclick="topFunction()" id="myBtn" title="Go to top" class="fade-in" style="display: none;">
+          <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+          <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_2ylbszmp.json" background="transparent"
+            speed="1" style="width: 70px; height: 70px;" loop autoplay></lottie-player>
+        </button>
+      </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js"
+      integrity="sha512-KZmyTq3PLx9EZl0RHShHQuXtrvdJ+m35tuOiwlcZfs/rE7NZv29ygNA8SFCkMXTnYZQK2OX0Gm2qKGfvWEtRXA=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="../js/main.js"></script>
+    <script>
+      var myApp = angular.module("MyApp", []);
+      myApp.controller("MyController", function ($scope) {
+        $scope.items = items.map(items => items.image_urls.toString());
+        $scope.listImgs = [];
+        for (let x of $scope.items) {
+          $scope.listImgs.push(x.split(', ')[0])
+          $scope.listImgs.push(x.split(', ')[1])
+          $scope.listImgs.push(x.split(', ')[2])
+        }
+      })
+    </script>
+    <script src="../dist/simple-lightbox.min.js"></script>
+    <!-- For legacy browsers -->
+    <script src="../dist/simple-lightbox.legacy.min.js"></script>
+    <!-- As A jQuery Plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+      integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="../dist/simple-lightbox.jquery.min.js"></script>
+    <script>
+
+      $(function () {
+        var gallery = $('.gallery a').simpleLightbox({ navText: ['&lsaquo;', '&rsaquo;'] });
+      });
+      function checkUser() {
+        let username = JSON.stringify(
+          sessionStorage.getItem("username")
+        );
+        if (username != "null" && username != "") {
+          var sign = document.getElementById("sign");
+          var textHTML =
+            '<li class="me-2"><span style="display: inline-block;padding: 8px;">Hello, ' +
+            JSON.parse(username) +
+            '!</span></li><li><button class="nav-link sign-out" onclick="delSession()">Sign out</button></li>';
+          sign.innerHTML = textHTML;
+        }
+      }
+      function delSession() {
+        sessionStorage.removeItem('username');
+        window.location = '../index.html';
+      }
+      checkUser();
+      let mybutton = document.getElementById("myBtn");
+
+            // When the user scrolls down 20px from the top of the document, show the button
+            window.onscroll = function () {
+                scrollFunction();
+            };
+
+            function scrollFunction() {
+                if (
+                    document.body.scrollTop > 20 ||
+                    document.documentElement.scrollTop > 20
+                ) {
+                    mybutton.style.display = "block";
+                } else {
+                    mybutton.style.display = "none";
+                }
+            }
+
+            // When the user clicks on the button, scroll to the top of the document
+            function topFunction() {
+                document.body.scrollTop = 0;
+                document.documentElement.scrollTop = 0;
+            }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.css" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css" />
+    <link rel="icon" href="../images/Logo2.png" type="image/gif" sizes="64x64" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" href="../images/Logo2.png" type="image/gif" sizes="64x64" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/details.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+
+    <title>Details | Bid Spirit</title>
+</head>
+
+<body ng-app="MyApp" onload="isTimeExpired()" >
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light border-bottom fixed-top bg-white">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="../index.html">
+                    <img src="../images/Logo.png" alt="" width="48" height="48" />
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span>
+                        <script src="https://cdn.lordicon.com/qjzruarw.js"></script>
+                        <lord-icon src="https://cdn.lordicon.com/bwhjesak.json" trigger="morph"
+                            style="width: 32px; height: 32px">
+                        </lord-icon>
+                    </span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="nav navbar-nav me-auto mb-2 mb-lg-0">
+                        <li>
+                            <a class="nav-link" aria-current="page" href="../index.html">Home</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="products.html">Products</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="about.html">
+                                About</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="contact.html">
+                                Contact</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="gallery.html">
+                                Gallery</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="sitemap.html">Site
+                                Map</a>
+                        </li>
+                    </ul>
+                    <ul class="nav-left navbar-nav ms-2 mb-2 mb-lg-0" id="sign">
+                        <li>
+                            <a href="form.html" class="nav-link">Sign In</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <nav aria-label="breadcrumb" style="margin-top: 6rem">
+        <ol class="breadcrumb mt-3 ms-4">
+            <li class="breadcrumb-item">
+                <a class="text-decoration-none" href="../index.html">Home</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a class="text-decoration-none" href="products.html">Products</a>
+            </li>
+            <li class="breadcrumb-item active">Detail</li>
+        </ol>
+    </nav>
+    <div ng-controller="MyController">
+        <div class="container mt-4 bg-white border" style="max-width: 900px; border-radius: 4px">
+            <div class="row">
+                <div class="col-6">
+                    <div class="big-img" style="width: 100%">
+                        <div class="fade-in img text-center" id="1" style="display: block">
+                            <img style="
+                                        width: 300px;
+                                        height: 350px;
+                                        object-fit: contain;
+                                    " src="../images/{{mySplit(item.image_urls , 0)}}" alt="" />
+                        </div>
+                        <div class="fade-in img text-center" id="2" style="display: none">
+                            <img style="
+                                        width: 300px;
+                                        height: 350px;
+                                        object-fit: contain;
+                                    " src="../images/{{mySplit(item.image_urls , 1)}}" alt="" />
+                        </div>
+                        <div class="fade-in img text-center" id="3" style="display: none">
+                            <img style="
+                                        width: 300px;
+                                        height: 350px;
+                                        object-fit: contain;
+                                    " src="../images/{{mySplit(item.image_urls , 2)}}" alt="" />
+                        </div>
+                    </div>
+                    <div class="sm-img row justify-content-center my-3">
+                        <div class="opacity-1 ms-2 py-2 sub-img" style="box-sizing: border-box; width: 100px">
+                            <a href="javascript:void(0)" onclick="openImg('1')"><img style="width: 100%"
+                                    src="../images/{{mySplit(item.image_urls , 0)}}" alt="" /></a>
+                        </div>
+                        <div class="opacity-50 ms-2 py-2 sub-img" style="box-sizing: border-box; width: 100px">
+                            <a href="javascript:void(0)" onclick="openImg('2')"><img style="width: 100%"
+                                    src="../images/{{mySplit(item.image_urls , 1)}}" alt="" /></a>
+                        </div>
+                        <div class="opacity-50 ms-2 py-2 sub-img" style="box-sizing: border-box; width: 100px">
+                            <a href="javascript:void(0)" onclick="openImg('3')"><img style="width: 100%"
+                                    src="../images/{{mySplit(item.image_urls , 2)}}" alt="" /></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <h2 class="my-3">{{item.name}}</h2>
+                    <p class="my-3">
+                        <span style="font-weight: 600">Category:</span>
+                        {{item.category}}
+                    </p>
+                    <p class="product-description my-3">
+                        <span style="font-weight: 600">Description:</span>
+                        {{item.product_descripton}}
+                    </p>
+                    <p>
+                        <span style="font-weight: 600">Price:</span>
+                        <span class="text-danger fw-bold">$<span id="price">{{item.starting_price}}</span></span>
+                    </p>
+                    <p class="my-3">
+                        <span style="font-weight: 600">Date start:</span>
+                        <span id="dateStart">{{item.start_date}}</span>
+                    </p>
+                    <p class="my-3">
+                        <span style="font-weight: 600">Date end:</span>
+                        <span id="dateEnd">{{item.end_date}}</span>
+                    </p>
+                    <div class="my-3">
+                        <div>
+                            <span class="fw-bold">Your max bid:</span>
+                        </div>
+                        <select name="" id="bidPrice">
+                            <option value="1">1</option>
+                            <option value="5">5</option>
+                            <option value="10">10</option>
+                            <option value="50">50</option>
+                            <option value="100">100</option>
+                            <option value="200">200</option>
+                            <option value="500">500</option>
+                            <option value="1000">1000</option>
+                            <option value="10000">10000</option>
+                        </select>
+                    </div>
+                    <p>
+                        <span class="text-danger">*</span> Bids above the
+                        leading bid are hidden from auction house
+                    </p>
+                    <button id="btn-bid" onclick="addPrice()" class="btn btn-warning fs-5">
+                        <i class="fas fa-gavel fa-rotate-270"></i> Bid
+                    </button>
+                </div>
+            </div>
+            <div class="row mt-3 ps-5">
+                <p class="fw-bold mt-2">Full description:</p>
+                <p>{{item.product_descripton}}</p>
+            </div>
+        </div>
+        <!--BEGIN PRODUCT-->
+        <div class="container mx-auto" id="product">
+            <div class="row mt-4 text-center">
+                <div class="h4">Related Products</div>
+            </div>
+            <div class="row">
+                <div class="sortable-card col-md-3 col-sm-6 col-12" ng-repeat="it in listItem">
+                    <div class="card mt-3 m-3 hover-shadow">
+                        <div class="view overlay">
+                            <a href="detail.html?id={{it.id}}"><img class="card-img-top"
+                                    src="../images/{{mySplit(it.image_urls , 0)}}" alt="Card image cap" width="200"
+                                    height="250" /></a>
+                        </div>
+                        <div class="card-body bg-light text-center">
+                            <a href="detail.html?id={{it.id}}" style="color: black">
+                                <div class="clearfix" style="width: 100%; height: 3rem">
+                                    <h5 class="card-title line-clamp" data-toggle="tooltip" data-placement="right"
+                                        title="{{it.name}}">
+                                        {{it.name}}
+                                        <span class="tooltiptext">{{it.name}}</span>
+                                    </h5>
+                                </div>
+                            </a>
+                            <p class="card-text mt-2 h1 bold text-danger">
+                                $ {{it.starting_price}}
+                            </p>
+                            <div class="clearfix">
+                                <span class="float-start" name="demo" style="line-height: 38px"
+                                    id="demo{{it.id}}"></span>
+                                <span hidden id="spandemo{{it.id}}">{{it.start_date}}</span>
+                                <a href="detail.html?id={{it.id}}"><button type="button"
+                                        class="btn btn-warning btn-lg float-end">
+                                        <i class="fa-sharp fa-solid fa-gavel"></i>
+                                        Live Auction
+                                    </button></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" style="margin-bottom: 0 !important;">
+        <footer class="text-center text-lg-start bg-light text-muted">
+            <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+                <div class="me-5 d-none d-lg-block">
+                    <span>Get connected with us on social networks:</span>
+                </div>
+
+                <div class="footer-icon">
+                    <a href="https://www.facebook.com/Aptech-Hue-1549657725082378" class="me-4 text-reset">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="https://twitter.com/aptechltd" class="me-4 text-reset">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a href="http://daotao.huecit.vn/%C4%90%C3%A0o-t%E1%BA%A1o/L%E1%BA%ADp-tr%C3%ACnh-vi%C3%AAn-qu%E1%BB%91c-t%E1%BA%BF/pid/5/cid/12?tid=Chuong-trinh-lap-trinh-vien-quoc-te-ASDE.html"
+                        class="me-4 text-reset">
+                        <i class="fa-brands fa-google"></i>
+                    </a>
+                    <a href="https://www.instagram.com/aptechlearning_official/" class="me-4 text-reset">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://in.linkedin.com/company/aptech" class="me-4 text-reset">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/aptech?language=e" class="me-4 text-reset">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                </div>
+            </section>
+
+            <section class="">
+                <div class="footer-hover container text-center text-md-start mt-5">
+                    <div class="row mt-3">
+                        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                            <h6 class="text-uppercase fw-bold mb-4">
+                                <p style="
+                                            color: #3b2314;
+                                            user-select: none;
+                                        ">
+                                    <img src="../images/Logo2.png" alt="" width="84" height="78" />
+                                    Bid Spirit
+                                </p>
+                            </h6>
+                            <p>
+                                Here you can use rows and columns to
+                                organize your footer content. Lorem ipsum
+                                dolor sit amet, consectetur adipisicing
+                                elit.
+                            </p>
+                        </div>
+
+                        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                            <h6 class="text-uppercase fw-bold mb-4">
+                                Products
+                            </h6>
+                            <p>
+                                <a href="../index.html" class="text-reset">Home</a>
+                            </p>
+                            <p>
+                                <a href="../html/products.html" class="text-reset">Products</a>
+                            </p>
+                            <p>
+                                <a href="../html/about.html" class="text-reset">About</a>
+                            </p>
+                            <p>
+                                <a href="../html/contact.html" class="text-reset">Contact</a>
+                            </p>
+                        </div>
+
+                        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                            <h6 class="text-uppercase fw-bold mb-4">
+                                Useful links
+                            </h6>
+                            <p>
+                                <a href="../html/gallery.html" class="text-reset">Gallery</a>
+                            </p>
+                            <p>
+                                <a href="../html/sitemap.html" class="text-reset">Site Map</a>
+                            </p>
+                            <p>
+                                <a href="../html/detail.html?id=1" class="text-reset">Details</a>
+                            </p>
+                        </div>
+
+                        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                            <h6 class="text-uppercase fw-bold mb-4">
+                                Contact
+                            </h6>
+                            <div class="mb-3">
+                                <a href="https://www.google.com/maps/place/Hu%E1%BA%BF+Aptech/@16.4590282,107.5791455,17z/data=!3m1!4b1!4m5!3m4!1s0x3141a149ef807aed:0x4eb6bafb31d4c653!8m2!3d16.4590188!4d107.581338?hl=vi-VN&shorturl=1"
+                                    class="text-reset"><i class="fas fa-home me-3"></i>6 Le
+                                    Loi, Hue, VietNam</a>
+                            </div>
+                            <div class="mb-3">
+                                <a href="mail: info@example.com" class="text-reset">
+                                    <i class="fas fa-envelope me-3"></i>
+                                    info@huecit.vn
+                                </a>
+                            </div>
+                            <div class="mb-3">
+                                <a href="tel: 02343823650" class="text-reset"><i class="fas fa-phone me-3"></i> 0234
+                                    3907 777</a>
+                            </div>
+                            <div class="mb-3">
+                                <a href="http://daotao.huecit.vn/%C4%90%C3%A0o-t%E1%BA%A1o/L%E1%BA%ADp-tr%C3%ACnh-vi%C3%AAn-qu%E1%BB%91c-t%E1%BA%BF/pid/5/cid/12?tid=Chuong-trinh-lap-trinh-vien-quoc-te-ASDE.html"
+                                    class="text-reset"><i class="fa-solid fa-globe me-3"></i>www.huecit.vn</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05)">
+                © 2022 Copyright:
+                <p>Vo Pham Khanh Truong - Nguyen Khanh Dat</p>
+            </div>
+        </footer>
+    </div>
+    <div>
+        <button onclick="topFunction()" id="myBtn" title="Go to top" class="fade-in" style="display: none">
+            <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+            <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_2ylbszmp.json" background="transparent"
+                speed="1" style="width: 70px; height: 70px" loop autoplay></lottie-player>
+        </button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+        integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js"
+        integrity="sha512-KZmyTq3PLx9EZl0RHShHQuXtrvdJ+m35tuOiwlcZfs/rE7NZv29ygNA8SFCkMXTnYZQK2OX0Gm2qKGfvWEtRXA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="../js/main.js"></script>
+    <script>
+        var url = window.location.search;
+        var searchParams = new URLSearchParams(url);
+        var id = searchParams.get("id");
+        var index = Number(id) - 1;
+        var myApp = angular.module("MyApp", []);
+        myApp.controller("MyController", function ($scope) {
+            $scope.data = items;
+            $scope.item = items[index];
+            var a = $scope.item.category;
+            $scope.listItem = items
+                .filter((checkItem) => checkItem.category == a)
+                .slice(0, 4);
+            $scope.mySplit = function (string, n) {
+                var array = string.split(", ");
+                return array[n];
+            };
+        });
+    </script>
+    <script>
+        function openImg(imgName) {
+            var i, x, images;
+            images = document.getElementsByClassName("sub-img");
+            x = document.getElementsByClassName("img");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            for (i = 0; i < images.length; i++) {
+                images[i].className = images[i].className.replace(
+                    "opacity-1",
+                    "opacity-50"
+                );
+            }
+            images[imgName - 1].className = images[
+                imgName - 1
+            ].className.replace("opacity-50", "opacity-1");
+            document.getElementById(imgName).style.display = "block";
+        }
+
+        function isTimeExpired() {
+            var startDate = document.getElementById("dateStart").innerText;
+            var endDate = document.getElementById("dateEnd").innerText;
+            let today = new Date().getTime();
+            let start = new Date(startDate).getTime();
+            let end = new Date(endDate).getTime();
+
+            var btn = document.getElementById("btn-bid");
+
+            if (today >= start && today <= end) {
+                return;
+            } else {
+                btn.style.cursor = "not-allowed";
+                btn.onclick = false;
+            }
+        }
+
+        function addPrice() {
+            var price = document.getElementById("price");
+            var bidPrice = document.getElementById("bidPrice").value;
+            price.innerText = Number(price.innerText) + Number(bidPrice);
+        }
+
+        function checkUser() {
+            let username = JSON.stringify(
+                sessionStorage.getItem("username")
+            );
+            if (username != "null" && username != "") {
+                var sign = document.getElementById("sign");
+                var textHTML =
+                    '<li class="me-2"><span style="display: inline-block;padding: 8px;">Hello, ' +
+                    JSON.parse(username) +
+                    '!</span></li><li><button class="nav-link sign-out" onclick="delSession()">Sign out</button></li>';
+                sign.innerHTML = textHTML;
+            }
+        }
+        function delSession() {
+            sessionStorage.removeItem('username');
+            window.location = '../index.html';
+        }
+        checkUser();
+        let mybutton = document.getElementById("myBtn");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () {
+            scrollFunction();
+        };
+
+        function scrollFunction() {
+            if (
+                document.body.scrollTop > 20 ||
+                document.documentElement.scrollTop > 20
+            ) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+</body>
+
+</html>
