@@ -186,8 +186,8 @@ var items = [
         "starting_price": 100,
         "highest_bidder": "0",
         "product_descripton": "2D/3D, one side logo or double.Printing/(black) Laser engraving/Etch etc.Square/rectangle/round ETC (customized).Iron/copper/copper/Zinc alloy etc.poly bag/bubble bag/opp bag/plastic box/gift box, etc.",
-        "start_date": "2023/11/08",
-        "end_date": "2023/12/21",
+        "start_date": "2022/11/08",
+        "end_date": "2022/12/21",
         "category": "antique",
         "status": "popular"
     },
